@@ -14,7 +14,6 @@ query = {
 response = requests.request("GET", url, params=query)
 
 DATA = response.json()
-# print(DATA)
 json_str = json.dumps(DATA)
 usr_dict = json.loads(json_str)
 
@@ -31,6 +30,3 @@ if usr_dict['data'][ip]['is_malicious']:
     print("最后更新时间：", usr_dict['data'][ip]['update_time'])
 else:
     print("无威胁")
-
-# url_whois = "http://tool.chinaz.com/ipwhois?q=" + ip
-# response = requests.request(url_whois)
